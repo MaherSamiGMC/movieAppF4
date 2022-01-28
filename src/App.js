@@ -5,6 +5,12 @@ import AddNewMovie from './components/AddNewMovie';
 import Header from './components/Header';
 import ListOfMovies from './components/ListOfMovies';
 import { Data } from './data';
+import {
+  Routes,
+  Route
+} from "react-router-dom";
+import MovieDetails from './components/MovieDetails';
+import CommentCard from './components/CommentCard';
 
 function App() {
   const [Movies, setMovies] = useState(Data)
@@ -22,9 +28,17 @@ function App() {
   return (
     <div >
       <Header filterMovie={filterMovie} />
-      <AddNewMovie addNewMovie={addNewMovie} />
-      <ListOfMovies movies={Movies} />
+      <Routes>
+      <Route path="/" element={ <> <ListOfMovies movies={Movies} /> </>  } />
+      <Route path="/addnewmovie" element={ <> <AddNewMovie addNewMovie={addNewMovie} /></>  } />
+      <Route path="/contactUs" element={ <>  <div> <h1> contact-us page </h1>  </div> </>  } />
+      <Route path="/movie/:movieId/" element={ <MovieDetails/>  } />
+      <Route path="/movie/:movieId/:commentId" element={ <CommentCard /> } />
+      <Route path="*" element={ <h1> 404 3ammar : (  </h1> } />
+      </Routes>
+
     </div>
+
   );
 }
 

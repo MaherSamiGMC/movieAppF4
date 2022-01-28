@@ -1,8 +1,9 @@
 import React from 'react';
 import {Card,Button} from 'react-bootstrap'
 import { Rating } from 'react-simple-star-rating'
+import { LinkContainer } from 'react-router-bootstrap'
 
-function MovieCard( {title,rate,description,image} ) {
+function MovieCard( {id,title,rate,description,image} ) {
   return (
     <Card style={{ width: '18rem' }}>
     <Card.Img variant="top" src={image} />
@@ -14,7 +15,11 @@ function MovieCard( {title,rate,description,image} ) {
       <Card.Text>
         {description}
       </Card.Text>
-      <Button variant="primary">See Details</Button>
+      <LinkContainer to={`/movie/${id}`}>
+        <Button variant="primary">See Details</Button>
+      </LinkContainer>
+
+
     </Card.Body>
   </Card>
   );

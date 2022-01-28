@@ -8,7 +8,7 @@ export const Data = [
       posterUrl:
         "https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_.jpg",
       trailer: "https://www.youtube.com/embed/6QRvTv_tpw0",
-
+      comments:[{id:1,text:"first comment"},{id:2,text:"second comment"}]
     },
     {
       id: 2,
